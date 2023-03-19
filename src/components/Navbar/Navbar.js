@@ -18,6 +18,8 @@ import useStyles from "./styles";
 import { styled } from "@material-ui/core/styles";
 import InputBase from '@material-ui/core/InputBase';
 import SubAppbar from "../subappbar/subappbar";
+import { getSearchItem } from '../../store/slices/searchSlice';
+import { useSelector, useDispatch } from 'react-redux'
 export const SearchOutlinedIcon = styled(SearchIcon)(({ theme }) => ({
   color: theme.palette.grey[600],
   marginRight: 7,
@@ -28,7 +30,7 @@ export const SearchOutlinedIcon = styled(SearchIcon)(({ theme }) => ({
 const Navbar = ({ totalItems }) => {
   const classes = useStyles();
   const location = useLocation();
-  const [searchTerm, setSearchTerm] = useState("");
+  const dispatch = useDispatch()
   const [open, setOpen] = useState(true);
   return (
     <div>
@@ -56,7 +58,7 @@ const Navbar = ({ totalItems }) => {
               type="text"
               placeholder="Searching for..."
               className={classes.searchArea}
-              // onChange={handleSearch}
+              onChange={(e)=>dispatch(getSearchItem(e.target.value))}
               InputProps={{
                 // hover:"transparent", 
                 endAdornment: (

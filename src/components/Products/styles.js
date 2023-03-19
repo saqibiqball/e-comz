@@ -11,7 +11,7 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(5),
-    zIndex: -1,
+    // zIndex: -1,
     // backgroundImage: image
   },
   root: {
@@ -33,7 +33,7 @@ export default makeStyles((theme) => ({
     flexDirection: "row",
   },
   carousel: {
-    zIndex: 1,
+    zIndex: -1,
     "@media (max-width: 992px)": {
       display: "none",
     },

@@ -19,10 +19,11 @@ import logo4 from "../../assets/5.png";
 import Sidebar from "../Sidebar/sidebar";
 import { Link } from "react-router-dom";
 import Divider from "@material-ui/core/Divider";
+import { useSelector, useDispatch } from "react-redux";
 const Products = ({ products, onAddToCart }) => {
   const classes = useStyles();
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const searchTerm = useSelector((state) => state.searchItemReducer.searchItem);
 
   return (
     <main className={classes.content}>
@@ -84,21 +85,6 @@ const Products = ({ products, onAddToCart }) => {
               </Carousel.Item>
             </Carousel>
           </Paper>
-          {/* <div className={classes.searchs}>
-            <Input
-              className={classes.searchb}
-              type="text"
-              placeholder="Search..."
-              onChange={(event) => {
-                setSearchTerm(event.target.value);
-              }}
-              startAdornment={
-                <InputAdornment position="start">
-                  <SearchIcon />
-                </InputAdornment>
-              }
-            />
-          </div> */}
         </Grid>
       </Grid>
       <Grid className={classes.content} container justify="center" spacing={5}>
