@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     // width: "100%",
     // maxWidth: 360,
+    // zIndex:"3",
     backgroundColor: theme.palette.background.paper,
   },
   nested: {
@@ -77,11 +78,15 @@ function CategoryMenu() {
                 <ChevronRightIcon />
               </ListItemIcon>
             </ListItem>
-            <Popper {...bindPopper(popupState)} transition>
+            <Popper
+              style={{ zIndex: "3", minWidth:"1080px", marginLeft:"30%" }}
+              {...bindPopper(popupState)}
+              transition
+            >
               {({ TransitionProps }) => (
                 <Fade {...TransitionProps} timeout={350}>
                   <Paper className={classes.papperBg}>
-                    <CategoryMenu />
+                    {/* <CategoryMenu /> */}
                   </Paper>
                 </Fade>
               )}

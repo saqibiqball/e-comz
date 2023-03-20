@@ -6,6 +6,7 @@ import {
   Button,
   Paper,
   CircularProgress,
+  Typography,
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import Product from "./Product/Product.js";
@@ -20,6 +21,8 @@ import Sidebar from "../Sidebar/sidebar";
 import { Link } from "react-router-dom";
 import Divider from "@material-ui/core/Divider";
 import { useSelector, useDispatch } from "react-redux";
+import Section2 from "../serviceList";
+import BestSellersSection from "./bestSellersProduct";
 const Products = ({ products, onAddToCart }) => {
   const classes = useStyles();
 
@@ -32,17 +35,16 @@ const Products = ({ products, onAddToCart }) => {
         <Grid className={classes.sidebarHide} item xs={6} sm={6}>
           <Sidebar />
         </Grid>
-        <Grid item xs={6} sm={12}>
-          <Paper className={classes.carousel} elevation={3}>
-            <Carousel fade autoPlay>
-              <Carousel.Item>
-                <img
-                  height={"10%"}
-                  className="d-block w-100"
-                  src={logo4}
-                  alt=" slide"
-                />
-                {/* <Carousel.Caption>
+        <Grid className={classes.carousel} item xs={6} sm={12}>
+          <Carousel fade autoPlay>
+            <Carousel.Item>
+              <img
+                height={"10%"}
+                className="d-block w-100"
+                src={logo4}
+                alt=" slide"
+              />
+              {/* <Carousel.Caption>
                   <Button
                     className={classes.but}
                     size="large"
@@ -53,10 +55,10 @@ const Products = ({ products, onAddToCart }) => {
                     Explore
                   </Button>
                 </Carousel.Caption> */}
-              </Carousel.Item>
-              <Carousel.Item>
-                <img className="d-block w-100" src={logo3} alt="Second slide" />
-                {/* <Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="d-block w-100" src={logo3} alt="Second slide" />
+              {/* <Carousel.Caption>
                   <Button
                     className={classes.but}
                     size="large"
@@ -68,10 +70,10 @@ const Products = ({ products, onAddToCart }) => {
                     Checkout Cart
                   </Button>
                 </Carousel.Caption> */}
-              </Carousel.Item>
-              <Carousel.Item>
-                <img className="d-block w-100" src={logo2} alt="Second slide" />
-                {/* <Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img className="d-block w-100" src={logo2} alt="Second slide" />
+              {/* <Carousel.Caption>
                   <Button
                     className={classes.but}
                     size="large"
@@ -82,34 +84,16 @@ const Products = ({ products, onAddToCart }) => {
                     Other Works
                   </Button>
                 </Carousel.Caption> */}
-              </Carousel.Item>
-            </Carousel>
-          </Paper>
+            </Carousel.Item>
+          </Carousel>
         </Grid>
       </Grid>
-      <Grid className={classes.content} container justify="center" spacing={5}>
-        {products.length === 0 ? (
-          <CircularProgress color="secondary" />
-        ) : (
-          products
-            .filter((product) => {
-              if (searchTerm === "") {
-                return product;
-              } else if (
-                product.name
-                  .toLowerCase()
-                  .includes(searchTerm.toLocaleLowerCase())
-              ) {
-                return product;
-              }
-            })
-            .map((product) => (
-              <Grid item key={product.id} xs={12} sm={6} md={4} lg={3} id="pro">
-                <Product product={product} onAddToCart={onAddToCart} />
-              </Grid>
-            ))
-        )}
-      </Grid>
+      <BestSellersSection
+        classes={classes}
+        searchTerm={searchTerm}
+        products={products}
+        onAddToCart={onAddToCart}
+      />
     </main>
   );
 };

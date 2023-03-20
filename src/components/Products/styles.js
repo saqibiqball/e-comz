@@ -11,6 +11,7 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(5),
+    // position: 'relative',
     // zIndex: -1,
     // backgroundImage: image
   },
@@ -31,11 +32,16 @@ export default makeStyles((theme) => ({
   mainGrid: {
     display: "flex",
     flexDirection: "row",
+    "@media (max-width: 992px)": {
+      flexDirection: "column",
+    },
   },
   carousel: {
-    zIndex: -1,
+    // zIndex: -1,
+    position: 'relative',
     "@media (max-width: 992px)": {
-      display: "none",
+      // display: "none",
+      minWidth:"430px"
     },
   },
   sidebarHide: {

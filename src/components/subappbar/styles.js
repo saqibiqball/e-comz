@@ -27,12 +27,16 @@ export default makeStyles((theme) => ({
     justifyContent: "space-around",
     alignItems: "center",
     padding: 0,
+    "@media (max-width: 992px)": {
+      display: "none",
+    },
   },
   listItem: {
     cursor: "pointer",
     "&:hover": {
       color: "red",
     },
+   
   },
   listItemText: {
     cursor: "pointer",
@@ -41,6 +45,7 @@ export default makeStyles((theme) => ({
     // "&:hover": {
     //   color: "red",
     // },
+    
   },
   catMenubtn: {
     display: "none",

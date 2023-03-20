@@ -26,7 +26,7 @@ import PopupState, { bindToggle, bindPopper } from "material-ui-popup-state";
 import Fade from "@material-ui/core/Fade";
 import Paper from "@material-ui/core/Paper";
 import MenuIcon from "@material-ui/icons/Menu";
-import CategoryMenu from "./categoriesMenu"
+import CategoryMenu from "./categoriesMenu";
 export const SearchOutlinedIcon = styled(SearchIcon)(({ theme }) => ({
   color: theme.palette.grey[600],
   marginRight: 7,
@@ -35,6 +35,7 @@ export const SearchOutlinedIcon = styled(SearchIcon)(({ theme }) => ({
 console.log(window.innerWidth, window.innerHeight);
 const SubAppbar = () => {
   const classes = useStyles();
+  
   return (
     <Grid className={classes.content} container>
       <Grid item xs={6}>
@@ -53,16 +54,20 @@ const SubAppbar = () => {
                 variant="outlined"
                 startIcon={<CategoryIcon />}
                 {...bindToggle(popupState)}
-                style={{ whiteSpace: "nowrap", textTransform:"capitalize" }}
+                style={{ whiteSpace: "nowrap", textTransform: "capitalize" }}
               >
                 {" "}
                 All Category
               </Button>
-              <Popper {...bindPopper(popupState)} transition>
+              <Popper
+                style={{ zIndex: "3" }}
+                {...bindPopper(popupState)}
+                transition
+              >
                 {({ TransitionProps }) => (
                   <Fade {...TransitionProps} timeout={350}>
                     <Paper className={classes.papperBg}>
-                     <CategoryMenu/>
+                      <CategoryMenu />
                     </Paper>
                   </Fade>
                 )}
@@ -75,7 +80,7 @@ const SubAppbar = () => {
         <List className={classes.list}>
           <ListItem className={classes.listItem}>
             <ListItemText
-              style={{ whiteSpace: "nowrap", }}
+              style={{ whiteSpace: "nowrap" }}
               className={classes.listItemText}
             >
               Home page
