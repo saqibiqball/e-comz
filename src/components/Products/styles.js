@@ -49,4 +49,15 @@ export default makeStyles((theme) => ({
       display: "none",
     },
   },
+  searchPaper:{
+    display:"none",
+    padding:"10px",
+    "@media (max-width: 992px)": {
+      display: "block",
+    },
+  },
+  carouselItems:{
+    // height:"100vh",
+    width:"100%"
+  }
 }));

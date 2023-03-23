@@ -8,11 +8,11 @@ import Checkout from './components/CheckoutForm/Checkout/Checkout';
 import ProductView from './components/ProductView/ProductView';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Newsletter from './components/Newsletter';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
-
+import "react-multi-carousel/lib/styles.css";
   const App = () => {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const [products, setProducts] = useState([]);
@@ -99,6 +99,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
               <ProductView />
             </Route>
           </Switch>
+          <Newsletter/>
         </div>
       </Router>
       <Footer />

@@ -7,6 +7,8 @@ import {
   Paper,
   CircularProgress,
   Typography,
+  TextField,
+  Box,
 } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import Product from "./Product/Product.js";
@@ -20,12 +22,20 @@ import logo4 from "../../assets/5.png";
 import Sidebar from "../Sidebar/sidebar";
 import { Link } from "react-router-dom";
 import Divider from "@material-ui/core/Divider";
+import { getSearchItem } from "../../store/slices/searchSlice";
 import { useSelector, useDispatch } from "react-redux";
 import Section2 from "../serviceList";
 import BestSellersSection from "./bestSellersProduct";
+import { styled } from "@material-ui/core/styles";
+export const SearchOutlinedIcon = styled(SearchIcon)(({ theme }) => ({
+  color: theme.palette.grey[600],
+  marginRight: 7,
+  marginLeft: 7,
+}));
+
 const Products = ({ products, onAddToCart }) => {
   const classes = useStyles();
-
+  const dispatch = useDispatch();
   const searchTerm = useSelector((state) => state.searchItemReducer.searchItem);
 
   return (
@@ -34,6 +44,33 @@ const Products = ({ products, onAddToCart }) => {
       <Grid className={classes.mainGrid}>
         <Grid className={classes.sidebarHide} item xs={6} sm={6}>
           <Sidebar />
+        </Grid>
+        <Grid className={classes.searchPaper} item xs={12} sm={12}>
+          {" "}
+          <Box position="relative" flex="1" minWidth="100%" maxWidth="100%">
+            <TextField
+              fullWidth
+              // variant="outlined"
+              type="text"
+              placeholder="Search..."
+              className={classes.searchArea}
+              onChange={(e) => dispatch(getSearchItem(e.target.value))}
+              InputProps={{
+                // hover:"transparent",
+                // endAdornment: (
+                //   <Button
+                //     color="secondary"
+                //     disableElevation
+                //     variant="contained"
+                //     className={classes.searchb}
+                //   >
+                //     Search
+                //   </Button>
+                // ),
+                startAdornment: <SearchOutlinedIcon fontSize="small" />,
+              }}
+            />
+          </Box>
         </Grid>
         <Grid className={classes.carousel} item xs={6} sm={12}>
           <Carousel fade autoPlay>

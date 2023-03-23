@@ -25,6 +25,9 @@ export default makeStyles((theme) => ({
       color: "lightgrey",
       boxShadow: "none",
     },
+    "@media (max-width: 992px)": {
+      display: "none",
+    },
   },
   cartt: {
     "&:hover": {
@@ -71,6 +74,16 @@ export default makeStyles((theme) => ({
     },
     "&:after .MuiOutlinedInput-notchedOutline": {
       borderColor: "grey",
+    },
+    "@media (max-width: 992px)": {
+      display: "none",
+    },
+  },
+  middleIcon:{
+    display:"none",
+    textAlign:"right",
+    "@media (max-width: 992px)": {
+      display: "block",
     },
   },
   searchb: {

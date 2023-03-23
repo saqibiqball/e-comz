@@ -32,7 +32,7 @@ export const SearchOutlinedIcon = styled(SearchIcon)(({ theme }) => ({
   marginRight: 7,
   marginLeft: 7,
 }));
-console.log(window.innerWidth, window.innerHeight);
+// console.log(window.innerWidth, window.innerHeight);
 const SubAppbar = () => {
   const classes = useStyles();
   

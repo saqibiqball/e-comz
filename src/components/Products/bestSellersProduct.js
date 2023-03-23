@@ -1,6 +1,12 @@
 import React from "react";
 import { Grid, CircularProgress, Typography } from "@material-ui/core";
 import Product from "./Product/Product.js";
+import ProductCarousel from "../carousels/ProductCarousel";
+import { products as productitems } from "../../mockdata";
+
+const freaturedItemArray = productitems.filter(
+  (productitem) => productitem.for.type === "featured-items"
+);
 function BestSellersSection({ classes, searchTerm, products, onAddToCart }) {
   return (
     <>
@@ -29,6 +35,7 @@ function BestSellersSection({ classes, searchTerm, products, onAddToCart }) {
               </Grid>
             ))
         )}
+        <ProductCarousel title="Featured Items" products={freaturedItemArray} />
       </Grid>
     </>
   );
