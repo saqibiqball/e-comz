@@ -35,8 +35,12 @@ export default makeStyles((theme) => ({
       boxShadow: "none",
     },
   },
-  image: {
+  imageLogo: {
     marginRight: "10px",
+    "@media (max-width: 992px)": {
+      height:"35%",
+      width:'35%'
+    },
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -91,4 +95,10 @@ export default makeStyles((theme) => ({
     height: "60%",
     borderRadius: "0 300px 300px 0",
   },
+  menuIcon:{
+    display:'none',
+    "@media (max-width: 992px)": {
+      display: "block",
+    },
+  }
 }));

@@ -99,6 +99,7 @@ import "react-multi-carousel/lib/styles.css";
               <ProductView />
             </Route>
           </Switch>
+          
           <Newsletter/>
         </div>
       </Router>

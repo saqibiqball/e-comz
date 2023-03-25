@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import image from "../../assets/Web.jpg"
+import image from "../../assets/Web.jpg";
 export default makeStyles((theme) => ({
   toolbar: {
     padding: "3%",
@@ -29,6 +29,18 @@ export default makeStyles((theme) => ({
     width: "100%",
     paddingLeft: "10px",
   },
+  searchArea:{
+    borderRadius: 800,
+    color: "grey",
+    overflow: "hidden",
+    border: "1px solid grey",
+    "&:hover .MuiOutlinedInput-notchedOutline": {
+      borderColor: "grey",
+    },
+    "&:after .MuiOutlinedInput-notchedOutline": {
+      borderColor: "grey",
+    },
+  },
   mainGrid: {
     display: "flex",
     flexDirection: "row",
@@ -38,10 +50,10 @@ export default makeStyles((theme) => ({
   },
   carousel: {
     // zIndex: -1,
-    position: 'relative',
+    position: "relative",
     "@media (max-width: 992px)": {
       // display: "none",
-      minWidth:"430px"
+      minWidth: "430px",
     },
   },
   sidebarHide: {
@@ -49,15 +61,30 @@ export default makeStyles((theme) => ({
       display: "none",
     },
   },
-  searchPaper:{
-    display:"none",
-    padding:"10px",
+  searchPaper: {
+    display: "none",
+    padding: "10px",
     "@media (max-width: 992px)": {
       display: "block",
     },
   },
-  carouselItems:{
+  carouselItems: {
     // height:"100vh",
-    width:"100%"
-  }
+    width: "100%",
+  },
+  sectionCards: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    margin: "20px",
+    "@media (max-width: 992px)": {
+      display: "none",
+    },
+  },
+  productItemCarouselTitle: {
+    display: "flex",
+    justifyContent: "flext-start",
+    padding:22,
+    
+  },
 }));

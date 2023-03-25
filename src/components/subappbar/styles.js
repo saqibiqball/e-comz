@@ -13,6 +13,7 @@ export default makeStyles((theme) => ({
     justifyContent: "space-between",
     "@media (max-width: 992px)": {
       flexDirection: "column",
+      display: "none",
     },
     alignItems: "flex-start",
     color: "grey",

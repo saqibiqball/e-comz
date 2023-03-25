@@ -48,7 +48,6 @@ const SubAppbar = () => {
                 startIcon={<MenuIcon />}
                 {...bindToggle(popupState)}
               />
-
               <Button
                 className={classes.catBtn}
                 variant="outlined"

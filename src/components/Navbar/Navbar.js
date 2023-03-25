@@ -11,6 +11,7 @@ import {
   Box,
   Hidden,
   Grid,
+  Popper,
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
 import { Link, useLocation } from "react-router-dom";
@@ -22,6 +23,11 @@ import InputBase from "@material-ui/core/InputBase";
 import SubAppbar from "../subappbar/subappbar";
 import { getSearchItem } from "../../store/slices/searchSlice";
 import { useSelector, useDispatch } from "react-redux";
+import PopupState, { bindToggle, bindPopper } from "material-ui-popup-state";
+import Fade from "@material-ui/core/Fade";
+import Paper from "@material-ui/core/Paper";
+import MenuIcon from "@material-ui/icons/Menu";
+import CategoryMenu from "../subappbar/categoriesMenu";
 export const SearchOutlinedIcon = styled(SearchIcon)(({ theme }) => ({
   color: theme.palette.grey[600],
   marginRight: 7,
@@ -38,6 +44,35 @@ const Navbar = ({ totalItems }) => {
       <AppBar position="fixed" className={classes.appBar} color="inherit">
         <Toolbar>
           <Grid item xs={6}>
+            <div className={classes.menuIcon}>
+              {" "}
+              <PopupState variant="dialog" popupId="demo-popup-popper">
+                {(popupState) => (
+                  <div>
+                    <Button
+                      className={classes.catMenubtn}
+                      // variant="outlined"
+                      startIcon={<MenuIcon />}
+                      {...bindToggle(popupState)}
+                    />
+                    <Popper
+                      style={{ zIndex: "3" }}
+                      {...bindPopper(popupState)}
+                      transition
+                    >
+                      {({ TransitionProps }) => (
+                        <Fade {...TransitionProps} timeout={350}>
+                          <Paper className={classes.papperBg}>
+                            <CategoryMenu />
+                          </Paper>
+                        </Fade>
+                      )}
+                    </Popper>
+                  </div>
+                )}
+              </PopupState>
+            </div>
+
             <Typography
               component={Link}
               to="/"
@@ -65,6 +100,7 @@ const Navbar = ({ totalItems }) => {
                 onChange={(e) => dispatch(getSearchItem(e.target.value))}
                 InputProps={{
                   // hover:"transparent",
+                  disableUnderline: true,
                   endAdornment: (
                     <Button
                       color="secondary"
@@ -89,7 +125,7 @@ const Navbar = ({ totalItems }) => {
                   src={logo}
                   alt="Book Store App"
                   height="50px"
-                  className={classes.image}
+                  className={classes.imageLogo}
                 />
                 {/* <strong color="black">Antoinedesulme</strong> */}
               </Typography>
