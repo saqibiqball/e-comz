@@ -51,7 +51,7 @@ const Products = ({ products, onAddToCart }) => {
         </Grid>
         <Grid className={classes.searchPaper} item xs={12} sm={12}>
           {" "}
-          <Box position="relative" flex="1" minWidth="90%" maxWidth="90%">
+          <Box position="relative" flex="1" >
             <TextField
               fullWidth
               // variant="outlined"
@@ -77,12 +77,10 @@ const Products = ({ products, onAddToCart }) => {
             />
           </Box>
         </Grid>
-        <Grid className={classes.carousel} item xs={6} sm={12}>
+        <Grid >
           <Carousel fade autoPlay>
             <Carousel.Item>
               <img
-                height={"10%"}
-                className="d-block w-100"
                 src={logo4}
                 alt=" slide"
               />
@@ -99,7 +97,7 @@ const Products = ({ products, onAddToCart }) => {
                 </Carousel.Caption> */}
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={logo3} alt="Second slide" />
+              <img  src={logo3} alt="Second slide" />
               {/* <Carousel.Caption>
                   <Button
                     className={classes.but}
@@ -114,7 +112,7 @@ const Products = ({ products, onAddToCart }) => {
                 </Carousel.Caption> */}
             </Carousel.Item>
             <Carousel.Item>
-              <img className="d-block w-100" src={logo2} alt="Second slide" />
+              <img src={logo2} alt="Second slide" />
               {/* <Carousel.Caption>
                   <Button
                     className={classes.but}

@@ -94,30 +94,6 @@ const SubAppbar = () => {
               Book listing
             </ListItemText>
           </ListItem>
-          <ListItem className={classes.listItem}>
-            <ListItemText
-              style={{ whiteSpace: "nowrap" }}
-              className={classes.listItemText}
-            >
-              Single book page
-            </ListItemText>
-          </ListItem>
-          <ListItem className={classes.listItem}>
-            <ListItemText
-              style={{ whiteSpace: "nowrap" }}
-              className={classes.listItemText}
-            >
-              Author page
-            </ListItemText>
-          </ListItem>
-          <ListItem className={classes.listItem}>
-            <ListItemText
-              style={{ whiteSpace: "nowrap" }}
-              className={classes.listItemText}
-            >
-              Blog
-            </ListItemText>
-          </ListItem>
         </List>
       </Grid>
     </Grid>

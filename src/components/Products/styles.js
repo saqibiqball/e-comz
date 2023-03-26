@@ -11,6 +11,7 @@ export default makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(5),
+    
     // position: 'relative',
     // zIndex: -1,
     // backgroundImage: image
@@ -75,7 +76,7 @@ export default makeStyles((theme) => ({
   sectionCards: {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     margin: "20px",
     "@media (max-width: 992px)": {
       display: "none",

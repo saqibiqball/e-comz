@@ -114,21 +114,7 @@ const Navbar = ({ totalItems }) => {
                   startAdornment: <SearchOutlinedIcon fontSize="small" />,
                 }}
               />
-              <Typography
-                component={Link}
-                to="/"
-                variant="h5"
-                className={classes.middleIcon}
-                color="inherit"
-              >
-                <img
-                  src={logo}
-                  alt="Book Store App"
-                  height="50px"
-                  className={classes.imageLogo}
-                />
-                {/* <strong color="black">Antoinedesulme</strong> */}
-              </Typography>
+   
             </Box>
           </Grid>
           <div className={classes.grow} />

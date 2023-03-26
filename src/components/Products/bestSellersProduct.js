@@ -16,31 +16,32 @@ function BestSellersSection({ classes, searchTerm, products, onAddToCart }) {
   ));
   return (
     <>
-      <div className="root">
+    
+      <div className="mainCardStyles">
         <Grid xs={12} className={classes.productItemCarouselTitle}>
           <Typography variant="h6">Paper Books</Typography>
         </Grid>
-        <Carousel showDots={true} responsive={responsive}>
+        <Carousel containerClass="carousel-container" showDots={true} responsive={responsive}>
           {productItem}
         </Carousel>
       </div>
-      <div className="root">
+      <div className="mainCardStyles">
         <Grid xs={12} className={classes.productItemCarouselTitle}>
           <Typography variant="h6">E - Books</Typography>
         </Grid>
-        <Carousel showDots={true} responsive={responsive}>
+        <Carousel containerClass="carousel-container" showDots={true} responsive={responsive}>
           {productItem}
         </Carousel>
       </div>
-      <div className="root">
+      <div className="mainCardStyles">
         <Grid xs={12} className={classes.productItemCarouselTitle}>
           <Typography variant="h6">Audio Books</Typography>
         </Grid>
-        <Carousel showDots={true} responsive={responsive}>
+        <Carousel containerClass="carousel-container" showDots={true} responsive={responsive}>
           {productItem}
         </Carousel>
       </div>
-      <Grid className={classes.content} container justify="center" spacing={5}>
+      <Grid container spacing={3} style={{marginTop:"5px"}}>
         {products.length === 0 ? (
           <CircularProgress color="secondary" />
         ) : (
